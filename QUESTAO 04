@@ -1,0 +1,44 @@
+#include <stdio.h>
+
+void selectionSort(float arr[], int n) {
+    int i, j, maxIdx;
+    float temp;
+
+    for (i = 0; i < n - 1; i++) {
+        maxIdx = i;
+        for (j = i + 1; j < n; j++) {
+            if (arr[j] > arr[maxIdx]) {
+                maxIdx = j;
+            }
+        }
+        if (maxIdx != i) {
+            temp = arr[i];
+            arr[i] = arr[maxIdx];
+            arr[maxIdx] = temp;
+        }
+    }
+}
+
+int main() {
+    int n, i;
+
+    printf("Digite o número de alunos: ");
+    scanf("%d", &n);
+
+    float notas[n];
+
+    printf("Digite as notas:\n");
+    for (i = 0; i < n; i++) {
+        scanf("%f", &notas[i]);
+    }
+
+    selectionSort(notas, n);
+
+    printf("Notas em ordem decrescente:\n");
+    for (i = 0; i < n; i++) {
+        printf("%.2f ", notas[i]);
+    }
+    printf("\n");
+
+    return 0;
+}
