@@ -1,0 +1,26 @@
+#include <stdio.h>
+
+int main() {
+    int idade;
+
+printf("Por favor, digite sua idade: ");
+    scanf("%d", &idade);
+
+if (idade < 0) {
+        printf("Idade inválida.\n");
+    } else {
+        switch (idade) {
+            case 0 ... 17:
+                printf("Menor de idade\n");
+                break;
+            case 18 ... 65:
+                printf("Maior de idade\n");
+                break;
+            default:
+                printf("Idoso\n");
+                break;
+        }
+    }
+
+    return 0;
+}
